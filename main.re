@@ -20,12 +20,12 @@ let rotate_right =
   | West => North;
 
 let rotate_rover_left r => {
-  let d = rotateLeft r.dir;
+  let d = rotate_left r.dir;
   {pos: r.pos, dir: d}
 };
 
 let rotate_rover_right r => {
-  let d = rotateRight r.dir;
+  let d = rotate_right r.dir;
   {pos: r.pos, dir: d}
 };
 
@@ -47,3 +47,5 @@ let direction_to_string =
 let print_rover {pos: (x, y), dir: d} => print_string (
   Printf.sprintf "(%d, %d) %s" x y (direction_to_string d)
 );
+
+print_rover {pos: (0, 0), dir: North};
